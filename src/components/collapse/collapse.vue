@@ -26,6 +26,12 @@ export default {
       activedKeys: [].concat(this.value)
     };
   },
+  watch: {
+    value(newVal, oldVal) {
+      this.activedKeys = newVal;
+      this.setActives();
+    }
+  },
   provide() {
     return {
       collapse: this
